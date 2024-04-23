@@ -1,20 +1,20 @@
 @font-face {
    font-family: "Montserrat";
-   src: url(fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+   src: url(fonts/Montserrat-VariableFont_wght.ttf);
 }
 
 :root {
    --roxo-gamifica: #47208b;
-   --larnja-gamifica: #f06638;
-
+   --laranja-gamifica: #f06638;
 }
 
+/* Reset CSS */
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
-}
 
+}
 
 html {
    scroll-behavior: smooth;
@@ -23,10 +23,18 @@ html {
 .container-grid {
    width: 80vw;
    max-width: 1400px;
+
+   /* margin: 20px - Espaçamento externo de 20px */
+   /* margin: 20px 10px - Espaçamento 20px na vertical, 10px na horizontal */
+   /* margin: 20px 10px 5px - Espaçamento 20px para cima, 10px na horizontal, 5px para baixo */
+   /* margin: 20px 10px 5px 2px - Espaçamento 20px para cima, 10px para a direita, 5px para baixo, 2px para a esquerda */
+
    margin: 0 auto;
 }
 
 .banner {
+   /* vh é a porcentagem da ALTURA da tela */
+   /* vw é a porcentagem da LARGURA da tela */
    height: 100vh;
 
    background-image: linear-gradient(90deg, rgba(53, 24, 104, 1) 0%, rgba(53, 24, 104, 0.8) 100%), url(img/bg-room.png);
@@ -53,7 +61,6 @@ header .container-grid {
    display: flex;
    justify-content: space-between;
    align-items: center;
-
 }
 
 .menu {
@@ -61,12 +68,10 @@ header .container-grid {
 
    display: flex;
    justify-content: space-between;
-
 }
 
 .menu a {
    font-size: 18px;
-
    font-family: 'Anta';
 
    color: white;
@@ -75,16 +80,15 @@ header .container-grid {
    text-decoration-thickness: 2px;
 
    transition: text-decoration 500ms ease;
-
 }
 
 .menu a:hover {
-
-   text-decoration-color: white
+   text-decoration-color: white;
 }
 
 .conteudo-banner {
    height: calc(100vh - 280px);
+
    display: flex;
    align-items: center;
 }
@@ -101,21 +105,21 @@ header .container-grid {
 
    overflow: hidden;
 
-   border-right: 4px solid var(--larnja-gamifica);
+   border-right: 5px solid var(--laranja-gamifica);
    white-space: nowrap;
 
    animation:
-      digitando 2s steps(40, end),
-      cursor 0.75s step-end infinite;
+       digitando 2s steps(40, end),
+       cursor 0.75s step-end infinite;
 }
 
 @keyframes digitando {
    from {
-      width: 0;
+       width: 0;
    }
 
    to {
-      width: 100%;
+       width: 100%;
    }
 }
 
@@ -123,20 +127,18 @@ header .container-grid {
 
    from,
    to {
-      border-color: transparent;
+       border-color: transparent;
    }
 
    50% {
-      border-color: var(--larnja-gamifica);
+       border-color: var(--laranja-gamifica);
    }
-
-
-
 }
 
 #sobre {
    height: 800px;
    padding: 100px 25%;
+
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -145,16 +147,17 @@ header .container-grid {
 }
 
 h2 {
-   font-family: "anta";
+   font-family: "Anta";
    font-size: 28px;
 }
 
 #sobre p {
    font-family: "Montserrat";
    font-size: 17px;
-   text-align: left;
-   line-height: 1.5;
 
+   text-align: left;
+
+   line-height: 1.5;
 }
 
 #cases {
@@ -166,7 +169,6 @@ h2 {
 
 #cases h2 {
    margin-bottom: 70px;
-
 }
 
 .container-cards {
@@ -191,17 +193,18 @@ h2 {
    border-radius: 4px;
 
    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
-
 }
 
 .card img {
    height: 55%;
    width: 100%;
+
    border-radius: 4px 4px 0px 0px;
 }
 
 .card p {
    color: white;
+
    font-family: "Montserrat";
    font-size: 16px;
 
@@ -214,7 +217,7 @@ h2 {
    width: 90%;
    height: 40px;
 
-   background-color: var(--larnja-gamifica);
+   background-color: var(--laranja-gamifica);
 
    border: none;
    border-radius: 4px;
@@ -226,6 +229,7 @@ h2 {
    font-weight: 600;
 
    cursor: pointer;
+
    transition: background-color 500ms ease;
 }
 
@@ -233,7 +237,7 @@ h2 {
    background-color: #ad4929;
 }
 
-#portifolio {
+#portfolio {
    height: 250px;
 
    background-image: url(img/bonecos.png);
@@ -244,7 +248,6 @@ h2 {
    position: relative;
 
    margin-bottom: 120px;
-
 }
 
 .filtro {
@@ -252,19 +255,21 @@ h2 {
    height: 100%;
 
    background-color: #47208bc2;
-   position: absolute;
-   top: 0px;
 
+   position: absolute;
+   top: 0;
+   left: 0;
 }
 
-#portifolio .container-grid {
+#portfolio .container-grid {
    height: 100%;
+
    display: flex;
    flex-direction: column;
    justify-content: center;
 }
 
-#portifolio a {
+#portfolio a {
    width: fit-content;
 
    color: white;
@@ -277,13 +282,14 @@ h2 {
    transition: 200ms;
 }
 
-#portifolio a:hover {
+#portfolio a:hover {
    transform: scale(1.05);
    transition: 200ms;
 }
 
 #contato {
    text-align: center;
+
    padding-bottom: 100px;
    margin-bottom: 100px;
 }
@@ -304,10 +310,10 @@ h2 {
 
    border-radius: 80px;
    background-color: var(--roxo-gamifica);
+
    color: white;
    font-family: "Montserrat";
    font-size: 17px;
-
 }
 
 .campo {
@@ -326,12 +332,12 @@ h2 {
    width: 60%;
 
    text-align: left;
+
    display: flex;
    flex-direction: column;
    justify-content: space-between;
 
    margin-bottom: 30px;
-
 }
 
 .campo input {
@@ -339,6 +345,7 @@ h2 {
 
    color: white;
    background-color: #351868;
+
    border: none;
    border-radius: 4px;
 
@@ -359,7 +366,6 @@ h2 {
    padding: 10px;
 
    resize: none;
-
 }
 
 .campo label,
@@ -380,15 +386,14 @@ h2 {
 
 .campo input:focus,
 .campo-descricao textarea:focus {
-   outline: 2px solid var(--larnja-gamifica);
+   outline: 2px solid var(--laranja-gamifica);
 }
-
 
 #contato form button {
    height: 40px;
    width: 60%;
 
-   background-color: var(--larnja-gamifica);
+   background-color: var(--laranja-gamifica);
    color: white;
 
    border: none;
@@ -397,12 +402,13 @@ h2 {
    font-size: 17px;
    font-family: "Montserrat";
    font-weight: 700;
+   /* Bold */
 
    text-transform: uppercase;
+
    cursor: pointer;
 
    transition: background-color 500ms;
-
 }
 
 #contato form button:hover {
@@ -413,7 +419,6 @@ footer {
    height: 290px;
 
    background-color: var(--roxo-gamifica);
-
 }
 
 footer .container-grid {
@@ -452,238 +457,235 @@ footer .container-grid {
 }
 
 .icones-redes a:hover {
-   color: var(--larnja-gamifica);
+   color: var(--laranja-gamifica);
 }
 
-@media screen and (max-width: 1300px) {
+/* OK - Scroll nos links */
+/* OK - Favicon */
+/* Animação do banner */
 
+@media screen and (max-width: 1300px) {
    header {
-      position: relative;
+       position: relative;
    }
 
    header button {
-      width: 50px;
+       width: 50px;
 
-      display: unset;
+       display: unset;
 
-      background: none;
-      border: none;
+       background: none;
+       border: none;
    }
 
    header svg {
-      fill: white;
+       fill: white;
    }
 
-
    nav.menu {
-      height: 500px;
-      width: 350px;
+       height: 500px;
+       width: 350px;
 
-      padding: 0px 30px;
+       padding: 0px 30px;
 
-      flex-direction: column;
-      justify-content: space-around;
+       flex-direction: column;
+       justify-content: space-around;
 
-      background-color: #000000da;
+       background-color: #000000da;
 
-      position: absolute;
-      top: 165px;
-      right: 0px;
-
+       position: absolute;
+       top: 165px;
+       right: 0px;
    }
 
    #sobre {
-      padding: 100px 15%;
+       padding: 100px 15%;
    }
 
    .card {
-      height: 320px;
-      width: 200px;
+       height: 320px;
+       width: 200px;
    }
 
    #contato form {
-      width: 75%;
-
+       width: 75%;
    }
 }
 
 @media screen and (max-width: 1080px) {
    .container-cards {
-      flex-wrap: wrap;
+       flex-wrap: wrap;
    }
 
-   .cards {
-      height: 400px;
+   .card {
+       height: 400px;
 
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: 40%;
-
+       flex-grow: 0;
+       flex-shrink: 0;
+       flex-basis: 40%;
    }
 
    footer {
-      height: unset;
+       height: unset;
    }
 
    footer .container-grid {
-      padding: 80px;
-      flex-direction: column;
-
+       padding: 80px;
+       flex-direction: column;
    }
 
    footer img {
-      margin-bottom: 100px;
+       margin-bottom: 100px;
    }
 
    footer p {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 40px;
-
+       width: 100%;
+       text-align: center;
+       margin-bottom: 40px;
    }
 
    .redes-sociais {
-      align-items: center;
+       align-items: center;
    }
-
 
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 800px) {
    .card {
-      flex-basis: 45%
+       flex-basis: 45%;
    }
 }
 
 @media screen and (max-width: 700px) {
    #sobre {
-      height: unset;
-      margin-bottom: 40px;
+       height: unset;
+       margin-bottom: 40px;
    }
 
    #sobre h2 {
-      margin-bottom: 50px;
+       margin-bottom: 50px;
    }
 
    #sobre p {
-      margin-bottom: 30px;
+       margin-bottom: 30px;
    }
 
    #cases,
    #contato {
-      margin-bottom: unset;
-
+       margin-bottom: unset;
    }
 
-   #portifolio a {
-      width: 100%;
-      text-align: center;
+   #portfolio a{
+       width: 100%;
+       text-align: center;
    }
 
    .campo,
-   .campo-descricao #contato form button {
-      width: 75%;
-   }
-
-}
-
-@media screen and (max-width: 520px) {
-   .container-grid {
-      width: 90%;
-
-   }
-
-   header img {
-      width: 200px;
-   }
-
-   .banner {
-      background-size: cover;
-   }
-
-   .conteudo-banner p {
-      font-size: 24px;
-   }
-
-   nav.menu {
-      width: 100%;
-      display: none;
-   }
-
-   #sobre {
-      padding-right: 0px;
-      padding-left: 0px;
-   }
-
-   #sobre p {
-      width: 90%;
-      margin: 0 auto;
-      margin-bottom: 20px;
-   }
-
-   #cases.container-grid {
-      width: 100%;
-      margin: unset;
-   }
-
-   .container-cards {
-      flex-wrap: nowrap;
-
-      gap: 40px;
-
-      overflow-x: auto;
-   }
-
-   .card {
-      height: 400px;
-      width: 280px;
-
-      flex-basis: unset;
-   }
-
-   .card:first-child {
-      margin-left: 30px;
-   }
-
-   .card:last-child {
-      margin-right: 30px;
-   }
-
-   #portifolio {
-      margin-bottom: 0;
-
-   }
-
-   #contato {
-      padding-top: 150px;
-      background-color: var(--roxo-gamifica);
-      color: white;
-   }
-
-   #contato h2 {
-      margin-bottom: 0;
-   }
-
-   #contato form {
-      width: 100%;
-      border-radius: 0;
+   .campo-descricao,
+   #contato form button{
+       width: 75%;
    }
 }
 
-   @media screen and (max-width: 400px) {
-      header img {
-         width: 160px;
-      }
-
-      header svg {
-         width: 40px;
-      }
-
-      .conteudo-banner p {
-         font-size: 20px;
-      }
-
-      footer img {
-         width: 200px;
-      }
+@media screen and (max-width: 520px){
+   .container-grid{
+       width: 90%;
    }
+
+   header img{
+       width: 200px;
+   }
+
+   .banner{
+       background-size: cover;
+   }
+
+   .conteudo-banner p{
+       font-size: 24px;
+   }
+
+   nav.menu{
+       width: 100%;
+
+       display: none;
+   }
+
+   #sobre{
+       padding-right: 0px;
+       padding-left: 0px;
+   }
+
+   #sobre p{
+       width: 90%;
+       margin: 0 auto;
+       margin-bottom: 20px;
+   }
+
+   #cases.container-grid{
+       width: 100%;
+       margin: unset;
+   }
+
+   .container-cards{
+       flex-wrap: nowrap;
+
+       gap: 40px;
+
+       overflow-x: auto;
+   }
+
+   .card{
+       height: 400px;
+       width: 280px;
+
+       flex-basis: unset;
+   }
+
+   .card:first-child{
+       margin-left: 30px;
+   }
+
+   .card:last-child{
+       margin-right: 30px;
+   }
+
+   #portfolio{
+       margin-bottom: 0;
+   }
+
+   #contato{
+       padding-top: 150px;
+
+       background-color: var(--roxo-gamifica);
+       color: white;
+   }
+
+   #contato h2{
+       margin-bottom: 0;
+   }
+
+   #contato form{
+       width: 100%;
+       border-radius: 0;
+   }
+}
+
+@media screen and (max-width: 400px){
+   header img{
+       width: 160px;
+   }
+
+   header svg{
+       width: 40px;
+   }
+
+   .conteudo-banner p{
+       font-size: 20px;
+   }
+
+   footer img{
+       width: 200px;
+   }
+
+   
+}
